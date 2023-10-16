@@ -1,0 +1,54 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.11
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    gitlab.com/decube83/wave:
+      branch: master
+      repo: https://gitlab.com/decube83/wave
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      gitlab.com/decube83/wave git:
+        commands:
+        - /usr/bin/env sh .sqa/script.bluesy-goldenrod-orangutan.sh
+        container: qc.acc_hasty-platinum-chin
+  QC.Doc:
+    repos:
+      gitlab.com/decube83/wave find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skinny-grey-lynx.sh
+        container: qc.doc_wiggy-azure-elephant
+      gitlab.com/decube83/wave git:
+        commands:
+        - /usr/bin/env sh .sqa/script.cheeky-wisteria-frise.sh
+        container: qc.doc_geeky-amethyst-woodpecker
+  QC.Lic:
+    repos:
+      gitlab.com/decube83/wave licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.boozy-charcoal-cougar.sh
+        container: qc.lic_zippy-thistle-bobcat
+  QC.Sec:
+    repos:
+      gitlab.com/decube83/wave bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-purple-weasel.sh
+        container: qc.sec_shaky-teal-hornet
+  QC.Sty:
+    repos:
+      gitlab.com/decube83/wave flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.muzzy-rose-emu.sh
+        container: qc.sty_trippy-orange-gopher
+  QC.Ver:
+    repos:
+      gitlab.com/decube83/wave get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scanty-coral-mouse.sh
+        container: qc.ver_geeky-aqua-jellyfish
+timeout: 5400
