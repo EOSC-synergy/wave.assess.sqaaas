@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/1.7.11
+      branch: release/1.7.13
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     gitlab.com/decube83/wave:
       branch: master
@@ -15,40 +15,40 @@ sqa_criteria:
     repos:
       gitlab.com/decube83/wave git:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-goldenrod-orangutan.sh
-        container: qc.acc_hasty-platinum-chin
+        - /usr/bin/env sh .sqa/script.dorky-cobalt-bombay.sh
+        container: qc.acc_snappy-wisteria-birman
   QC.Doc:
     repos:
       gitlab.com/decube83/wave find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skinny-grey-lynx.sh
-        container: qc.doc_wiggy-azure-elephant
+        - /usr/bin/env sh .sqa/script.scaly-purple-lynx.sh
+        container: qc.doc_homely-heliotrope-buzzard
       gitlab.com/decube83/wave git:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-wisteria-frise.sh
-        container: qc.doc_geeky-amethyst-woodpecker
+        - /usr/bin/env sh .sqa/script.grumpy-auburn-snail.sh
+        container: qc.doc_nerdy-orange-alligator
   QC.Lic:
     repos:
       gitlab.com/decube83/wave licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-charcoal-cougar.sh
-        container: qc.lic_zippy-thistle-bobcat
+        - /usr/bin/env sh .sqa/script.nippy-orange-millipede.sh
+        container: qc.lic_baggy-plum-monkey
   QC.Sec:
     repos:
       gitlab.com/decube83/wave bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-purple-weasel.sh
-        container: qc.sec_shaky-teal-hornet
+        - /usr/bin/env sh .sqa/script.flabby-olive-foxhound.sh
+        container: qc.sec_dorky-russet-tzu
   QC.Sty:
     repos:
       gitlab.com/decube83/wave flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.muzzy-rose-emu.sh
-        container: qc.sty_trippy-orange-gopher
+        - /usr/bin/env sh .sqa/script.flaky-tangerine-tang.sh
+        container: qc.sty_snappy-rust-wrasse
   QC.Ver:
     repos:
       gitlab.com/decube83/wave get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-coral-mouse.sh
-        container: qc.ver_geeky-aqua-jellyfish
+        - /usr/bin/env sh .sqa/script.trippy-white-armadillo.sh
+        container: qc.ver_homey-firebrick-neanderthal
 timeout: 5400
